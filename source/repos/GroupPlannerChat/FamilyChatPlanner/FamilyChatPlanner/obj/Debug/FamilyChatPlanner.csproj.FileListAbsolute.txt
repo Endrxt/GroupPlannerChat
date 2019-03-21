@@ -1,0 +1,17 @@
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\MainWindow.g.cs
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\App.g.cs
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\FamilyChatPlanner_MarkupCompile.cache
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\FamilyChatPlanner_MarkupCompile.lref
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\bin\Debug\FamilyChatPlanner.exe.config
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\bin\Debug\FamilyChatPlanner.exe
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\bin\Debug\FamilyChatPlanner.pdb
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\MainWindow.baml
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\FamilyChatPlanner.g.resources
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\FamilyChatPlanner.Properties.Resources.resources
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\FamilyChatPlanner.csproj.GenerateResource.Cache
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\FamilyChatPlanner.csproj.CoreCompileInputs.cache
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\FamilyChatPlanner.exe
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\FamilyChatPlanner.pdb
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\Window1.g.cs
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\Window1.baml
+C:\Users\Endrit\Desktop\FamilyChatPlanner\FamilyChatPlanner\obj\Debug\FamilyChatPlanner.csprojResolveAssemblyReference.cache
