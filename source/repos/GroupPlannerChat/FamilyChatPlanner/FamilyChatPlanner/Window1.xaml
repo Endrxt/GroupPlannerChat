@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="GPC" Height="329.412" Width="521.849">
     <Grid>
-        <Calendar HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="89" Margin="10,199,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="314" TextChanged="TextBox_TextChanged"/>
+        <Calendar HorizontalAlignment="Left" Margin="323,10,0,0" VerticalAlignment="Top" Width="181"/>
+        <TextBox Height="28" Margin="10,260,205,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
+        <ListBox HorizontalAlignment="Left" Height="236" Margin="10,10,0,0" VerticalAlignment="Top" Width="299"/>
 
     </Grid>
 </Window>
