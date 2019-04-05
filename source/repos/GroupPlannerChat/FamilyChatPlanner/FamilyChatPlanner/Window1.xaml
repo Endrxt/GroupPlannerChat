@@ -8,7 +8,7 @@
         Title="GPC" Height="329.412" Width="521.849">
     <Grid>
         <Calendar HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="89" Margin="10,199,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="314"/>
+        <TextBox HorizontalAlignment="Left" Height="89" Margin="10,199,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="314" TextChanged="TextBox_TextChanged"/>
 
     </Grid>
 </Window>
