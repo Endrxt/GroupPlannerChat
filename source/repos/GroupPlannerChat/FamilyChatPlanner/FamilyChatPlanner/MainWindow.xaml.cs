@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace FamilyChatPlanner
 {
@@ -25,14 +26,25 @@ namespace FamilyChatPlanner
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnAnmelden_Click(object sender, RoutedEventArgs e)
         {
-            Window1 main = new Window1();
-            App.Current.MainWindow = main;
-            this.Close();
-            main.Show();
+            StreamReader stream = new StreamReader(@"../../../pw.txt");
 
-            //change statupURi in App.xml
+            while (stream.EndOfStream == false)
+            {
+                string line = stream.ReadLine();
+                string[] array = line.Split(';');
+
+                if (array[0] == UserBox.Text && array[1] == PwBox.Password)
+                {
+                    Window1 Window = new Window1();
+                    App.Current.MainWindow = Window;
+                    this.Close();
+                    Window.Show();
+                    //change statupURi in App.xml
+                }
+            }
+
         }
     }
 }
