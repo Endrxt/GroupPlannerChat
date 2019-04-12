@@ -26,7 +26,7 @@ namespace FamilyChatPlanner
             InitializeComponent();
         }
 
-        private void btnAnmelden_Click(object sender, RoutedEventArgs e)
+        private void BtnAnmelden_Click(object sender, RoutedEventArgs e)
         {
             StreamReader stream = new StreamReader(@"../../../pw.txt");
 
@@ -45,6 +45,17 @@ namespace FamilyChatPlanner
                 }
             }
 
+        }
+
+        private void BtnReg_Click(object sender, RoutedEventArgs e)
+        {
+            StreamWriter stream = new StreamWriter(@"../../../pw.txt", true);
+
+            string name = UserBox.Text;
+            string pw = PwBox.Password;
+            string line = name + ';' + pw;
+
+            stream.WriteLine(line);
         }
     }
 }
