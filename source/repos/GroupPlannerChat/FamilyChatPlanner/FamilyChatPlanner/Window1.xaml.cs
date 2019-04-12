@@ -19,14 +19,21 @@ namespace FamilyChatPlanner
     /// </summary>
     public partial class Window1 : Window
     {
+
+        interface Anmeldung
+        {
+            
+        }
+
         public Window1()
         {
             InitializeComponent();
+
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-        
+            LbMessages.Items.Add(TbInput.Text);
         }
     }
 }
