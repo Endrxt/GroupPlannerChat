@@ -30,11 +30,14 @@ namespace FamilyChatPlanner
         public Window1()
         {
             InitializeComponent();
+            
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow w = new MainWindow();
+            LbMessages.Items.Add(w.UserBox.Text); 
             LbMessages.Items.Add(TbInput.Text);
         }
     }

@@ -10,8 +10,8 @@
         <Label Content="Anmeldung" HorizontalAlignment="Left" Margin="130,21,0,0" VerticalAlignment="Top" Height="77" Width="262" FontSize="48"/>
         <Frame x:Name="frame" Content="Frame" HorizontalAlignment="Left" Height="319" VerticalAlignment="Top" Width="517" NavigationUIVisibility="Hidden" Margin="0,0,-0.4,0"/>
         <Button x:Name="BtnAnmelden" Content="Anmelden" HorizontalAlignment="Left" Margin="217,251,0,0" VerticalAlignment="Top" Width="75" Click="BtnAnmelden_Click"/>
-        <PasswordBox x:Name="PwBox" Password="Passwort"  HorizontalAlignment="Left" Margin="201,173,0,0" VerticalAlignment="Top" Width="118"/>
-        <TextBox x:Name="UserBox" HorizontalAlignment="Center" Height="23" Margin="201,133,197.6,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="118"/>
+        <PasswordBox x:Name="PwBox" Password="Passwort"  HorizontalAlignment="Left" Margin="201,173,0,0" VerticalAlignment="Top" Width="126"/>
+        <TextBox x:Name="UserBox" HorizontalAlignment="Center" Height="23" Margin="202,133,190,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="126"/>
         <Button x:Name="BtnReg" Content="Registrieren" HorizontalAlignment="Left" Margin="358,251,0,0" VerticalAlignment="Top" Width="75" Click="BtnReg_Click"/>
 
     </Grid>

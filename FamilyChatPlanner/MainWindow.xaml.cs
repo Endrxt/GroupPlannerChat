@@ -42,15 +42,12 @@ namespace FamilyChatPlanner
                     this.Close();
                     Window.Show();
                     //change statupURi in App.xml
-                }
 
-                else
-                {
-                    UserBox.Text = "";
-                    PwBox.Password = "";
                 }
             }
 
+            UserBox.Text = "";
+            PwBox.Password = "";
             stream.Close();
 
         }
