@@ -60,6 +60,7 @@ namespace FamilyChatPlanner
 
         public  void BtnReg_Click(object sender, RoutedEventArgs e)
         {
+            username = UserBox.Text;
             StreamWriter stream = new StreamWriter(@"../../../pw.txt", true);
 
             string name = UserBox.Text;
@@ -74,6 +75,5 @@ namespace FamilyChatPlanner
             this.Close();
             Window.Show();
         }
-
     }
 }

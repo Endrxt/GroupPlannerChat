@@ -7,10 +7,15 @@
         mc:Ignorable="d"
         Title="GPC" Height="329.412" Width="521.849">
     <Grid>
-        <Calendar HorizontalAlignment="Left" Margin="323,10,0,0" VerticalAlignment="Top" Width="181"/>
-        <TextBox x:Name="TbInput" Height="28" Margin="10,260,205,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
-        <ListBox x:Name="LbMessages" HorizontalAlignment="Left" Height="236" Margin="10,10,0,0" VerticalAlignment="Top" Width="299"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="323,260,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="Button_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="273*"/>
+            <ColumnDefinition Width="242*"/>
+        </Grid.ColumnDefinitions>
+        <Calendar Name="sucukPlanner" HorizontalAlignment="Left" Margin="49.8,10,0,0" VerticalAlignment="Top" Width="181" Grid.Column="1"/>
+        <TextBox x:Name="TbInput" Height="28" Margin="10,260,204.2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.ColumnSpan="2" KeyDown="OnKeyDownHandler" />
+        <ListBox x:Name="LbMessages" HorizontalAlignment="Left" Height="236" Margin="10,10,0,0" VerticalAlignment="Top" Width="299" Grid.ColumnSpan="2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="49.8,260,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="Button_Click" Grid.Column="1"/>
+        <Button x:Name="btnDelete" Content="Löschen" HorizontalAlignment="Left" Margin="148.8,259,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="BtnDelete_Click" Grid.Column="1"/>
 
     </Grid>
 </Window>

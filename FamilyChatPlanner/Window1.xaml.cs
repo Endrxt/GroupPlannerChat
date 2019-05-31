@@ -36,8 +36,24 @@ namespace FamilyChatPlanner
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            LbMessages.Items.Add($"{MainWindow.ww.username}\n{TbInput.Text}"); 
+            if (sucukPlanner.SelectedDate is null) { sucukPlanner.SelectedDate = DateTime.Now; }
+            MessageBox.Show(sucukPlanner.SelectedDate.ToString() + " hat an dem Tag SUCUK gegessen!");
+           LbMessages.Items.Add($"{MainWindow.ww.username}\n{TbInput.Text}"); 
             //LbMessages.Items.Add(TbInput.Text);
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            LbMessages.Items.Remove(LbMessages.SelectedItem);
+        }
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                LbMessages.Items.Add($"{MainWindow.ww.username}\n{TbInput.Text}");
+                TbInput.Text = null;
+            }
         }
     }
 }
