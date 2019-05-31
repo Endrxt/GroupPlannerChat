@@ -21,9 +21,14 @@ namespace FamilyChatPlanner
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string username;
+        static public MainWindow ww;
+
         public MainWindow()
         {
+            ww = this;
             InitializeComponent();
+            
         }
 
         public void BtnAnmelden_Click(object sender, RoutedEventArgs e)
@@ -37,9 +42,10 @@ namespace FamilyChatPlanner
 
                 if (array[0] == UserBox.Text && array[1] == PwBox.Password)
                 {
+                    username = UserBox.Text;
                     Window1 Window = new Window1();
                     App.Current.MainWindow = Window;
-                    this.Close();
+                    this.Hide();
                     Window.Show();
                     //change statupURi in App.xml
 
@@ -68,5 +74,6 @@ namespace FamilyChatPlanner
             this.Close();
             Window.Show();
         }
+
     }
 }

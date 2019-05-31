@@ -36,9 +36,8 @@ namespace FamilyChatPlanner
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow w = new MainWindow();
-            LbMessages.Items.Add(w.UserBox.Text); 
-            LbMessages.Items.Add(TbInput.Text);
+            LbMessages.Items.Add($"{MainWindow.ww.username}\n{TbInput.Text}"); 
+            //LbMessages.Items.Add(TbInput.Text);
         }
     }
 }
