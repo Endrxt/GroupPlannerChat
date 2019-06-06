@@ -22,24 +22,39 @@ namespace FamilyChatPlanner
 
         interface Anmeldung
         {
-            
+
         }
 
-
+        List<Post> infos = new List<Post>();
 
         public Window1()
         {
             InitializeComponent();
-            
+
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (sucukPlanner.SelectedDate is null) { sucukPlanner.SelectedDate = DateTime.Now; }
-            MessageBox.Show(sucukPlanner.SelectedDate.ToString() + " hat an dem Tag SUCUK gegessen!");
-           LbMessages.Items.Add($"{MainWindow.ww.username}\n{TbInput.Text}"); 
+            //if (sucukPlanner.SelectedDate is null)
+            //{
+            //    sucukPlanner.SelectedDate = DateTime.Now;
+            //}
+
+            //MessageBox.Show(sucukPlanner.SelectedDate.ToString() + " hat an dem Tag SUCUK gegessen!");
+            //LbMessages.Items.Add($"{MainWindow.ww.username}\n{TbInput.Text}");
             //LbMessages.Items.Add(TbInput.Text);
+
+            Post Post1 = new Post()
+            {
+                Erstelldatum= DateTime.Now/*.Date*/,
+                Ablaufdatum = (DateTime)DatumPicker.SelectedDate,
+                Kurzbeschreibung = TbInput.Text
+            };
+
+            infos.Add(Post1);
+            LbMessages.SelectedItem = LbMessages.Items[0];           
+            txtInfos.Text = $"{infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Erstelldatum} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum.ToString("dd/MM/yyyy")} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Kurzbeschreibung}";
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
@@ -52,8 +67,27 @@ namespace FamilyChatPlanner
             if (e.Key == Key.Return)
             {
                 LbMessages.Items.Add($"{MainWindow.ww.username}\n{TbInput.Text}");
-                TbInput.Text = null;
+                
+                TbInput.Text = " ";
             }
+            Post Post1 = new Post()
+            {
+                Erstelldatum = DateTime.Now/*.Date*/,
+                Ablaufdatum = (DateTime)DatumPicker.SelectedDate,
+                Kurzbeschreibung = TbInput.Text
+            };
+
+            infos.Add(Post1);
+
+        }
+
+        private void LbMessages_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LbMessages.SelectedItem = LbMessages.Items[0];
+
+
+                txtInfos.Text = $"{infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Erstelldatum} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum.ToString("dd/MM/yyyy")} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Kurzbeschreibung}";
+
         }
     }
 }

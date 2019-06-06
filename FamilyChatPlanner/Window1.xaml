@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FamilyChatPlanner"
         mc:Ignorable="d"
-        Title="GPC" Height="329.412" Width="521.849">
+        Title="GPC" Height="382.8" Width="580.4">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="273*"/>
             <ColumnDefinition Width="242*"/>
         </Grid.ColumnDefinitions>
-        <Calendar Name="sucukPlanner" HorizontalAlignment="Left" Margin="49.8,10,0,0" VerticalAlignment="Top" Width="181" Grid.Column="1"/>
-        <TextBox x:Name="TbInput" Height="28" Margin="10,260,204.2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.ColumnSpan="2" KeyDown="OnKeyDownHandler" />
-        <ListBox x:Name="LbMessages" HorizontalAlignment="Left" Height="236" Margin="10,10,0,0" VerticalAlignment="Top" Width="299" Grid.ColumnSpan="2"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="49.8,260,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="Button_Click" Grid.Column="1"/>
-        <Button x:Name="btnDelete" Content="Löschen" HorizontalAlignment="Left" Margin="148.8,259,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="BtnDelete_Click" Grid.Column="1"/>
+        <Calendar Name="DatumPicker" HorizontalAlignment="Left" Margin="49.8,10,0,0" VerticalAlignment="Top" Width="181" Grid.Column="1"/>
+        <TextBox x:Name="TbInput" Height="28" Margin="11,312,268.4,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.ColumnSpan="2" KeyDown="OnKeyDownHandler" />
+        <ListBox x:Name="LbMessages" HorizontalAlignment="Left" Height="281" Margin="10,10,0,0" VerticalAlignment="Top" Width="299" Grid.ColumnSpan="2" SelectionChanged="LbMessages_SelectionChanged"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="42.2,310,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="Button_Click" Grid.Column="1"/>
+        <Button x:Name="btnDelete" Content="Löschen" HorizontalAlignment="Left" Margin="154.2,308,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="BtnDelete_Click" Grid.Column="1"/>
+        <TextBlock x:Name="txtInfos" Grid.Column="1" HorizontalAlignment="Left" Margin="55.2,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="94" Width="181"/>
 
     </Grid>
 </Window>

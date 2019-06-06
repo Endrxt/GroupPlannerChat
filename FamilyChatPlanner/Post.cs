@@ -8,9 +8,10 @@ namespace FamilyChatPlanner
 {
     class Post
     {
-        DateTime Erstelldatum;
-        DateTime Ablaufdatum;
-        String Kurzbeschreibung;
-        String Username;
+        internal DateTime Erstelldatum;
+        internal DateTime Ablaufdatum;
+        internal String Kurzbeschreibung;
+        //internal String Username;
+
     }
 }
