@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,37 +21,48 @@ namespace FamilyChatPlanner
     public partial class Window1 : Window
     {
 
-        interface Anmeldung
-        {
-
-        }
-
         List<Post> infos = new List<Post>();
 
         public Window1()
         {
             InitializeComponent();
+            //StreamReader stream = new StreamReader(@"../../../daten.txt");
+            //string daten = "";
 
+            //string line = stream.ReadLine();
+            //daten += line;
 
+            //string[] array = daten.Split(';');
+
+            //foreach (var item in array)
+            //{
+            //    LbMessages.Items.Add(item);
+            //}
+
+            //while (stream.EndOfStream == false)
+            //{
+            //    line = stream.ReadLine();
+            //    string[] feindaten = line.Split(';');
+
+            //    Post Post1 = new Post()
+            //    {
+            //        Erstelldatum = DateTime.Parse(feindaten[0]),
+            //        Ablaufdatum = DateTime.Parse(feindaten[1]),
+            //        Kurzbeschreibung = feindaten[2]
+            //    };
+
+            //    infos.Add(Post1);
+
+            //}
+            //stream.Close();
+            //LbMessages.Items.RemoveAt(LbMessages.Items.Count - 1);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //if (sucukPlanner.SelectedDate is null)
-            //{
-            //    sucukPlanner.SelectedDate = DateTime.Now;
-            //}
-
-            //MessageBox.Show(sucukPlanner.SelectedDate.ToString() + " hat an dem Tag SUCUK gegessen!");
             //LbMessages.Items.Add($"{MainWindow.ww.username}\n{TbInput.Text}");
             //LbMessages.Items.Add(TbInput.Text);
 
-            //Post Post1 = new Post()
-            //{
-            //    Erstelldatum= DateTime.Now/*.Date*/,
-            //    Ablaufdatum = (DateTime)DatumPicker.SelectedDate,
-            //    Kurzbeschreibung = TbInput.Text
-            //};
             try
             {
                 infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum = (DateTime)DatumPicker.SelectedDate;
@@ -62,8 +74,8 @@ namespace FamilyChatPlanner
             infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Kurzbeschreibung = TbInput.Text;
 
             //infos.Add(Post1);
-            LbMessages.SelectedItem = LbMessages.Items[0];           
-            txtInfos.Text = $"{infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Erstelldatum} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum.ToString("dd/MM/yyyy")} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Kurzbeschreibung}";
+            LbMessages.SelectedItem = LbMessages.Items[0];
+            txtInfos.Text = $"Erstellzeit: {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Erstelldatum}\nFrist: {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum.ToString("dd/MM/yyyy")}\nBeschreibung:\n{infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Kurzbeschreibung}";
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
@@ -78,9 +90,12 @@ namespace FamilyChatPlanner
         {
             if (e.Key == Key.Return)
             {
-                LbMessages.Items.Add($"{MainWindow.ww.username}\n{TbInput.Text}");
-                
-                TbInput.Text = " ";
+                LbMessages.Items.Add($"{MainWindow.ww.username}: {TbInput.Text}");
+                StreamWriter stream = new StreamWriter(@"../../../daten.txt", true);
+                stream.Write($"{MainWindow.ww.username}: {TbInput.Text};");
+                stream.Close();
+
+                TbInput.Text = "";
             }
             Post Post1 = new Post()
             {
@@ -91,12 +106,14 @@ namespace FamilyChatPlanner
 
             infos.Add(Post1);
 
+            StreamWriter streamInfos = new StreamWriter(@"../../../daten.txt", true);
+            streamInfos.WriteLine($"{Post1.Erstelldatum};{Post1.Ablaufdatum};{Post1.Kurzbeschreibung}");
+            streamInfos.Close();
         }
 
         private void LbMessages_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-         txtInfos.Text = $"{infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Erstelldatum} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum.ToString("dd/MM/yyyy")} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Kurzbeschreibung}";
-
+            txtInfos.Text = $"Erstellzeit: {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Erstelldatum}\nFrist: {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum.ToString("dd/MM/yyyy")}\nBeschreibung:\n{infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Kurzbeschreibung}";
         }
     }
 }

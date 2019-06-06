@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace FamilyChatPlanner
 {
@@ -45,7 +46,7 @@ namespace FamilyChatPlanner
                     username = UserBox.Text;
                     Window1 Window = new Window1();
                     App.Current.MainWindow = Window;
-                    this.Hide();
+                    this.Close();
                     Window.Show();
                     //change statupURi in App.xml
 
@@ -63,12 +64,22 @@ namespace FamilyChatPlanner
             username = UserBox.Text;
             StreamWriter stream = new StreamWriter(@"../../../pw.txt", true);
 
-            string name = UserBox.Text;
-            string pw = PwBox.Password;
-            string line = name + ';' + pw;
+            if (Regex.IsMatch(username, "[A-Z]"))
+            {
+                string name = UserBox.Text;
+                string pw = PwBox.Password;
+                string line = name + ';' + pw;
 
-            stream.WriteLine(line);
-            stream.Close();
+                stream.WriteLine(line);
+                stream.Close();
+            }
+
+            else
+            {
+                MessageBox.Show("Der Username darf nur aus Buchstaben bestehen");
+                UserBox.Text = "";
+            }
+            
 
             Window1 Window = new Window1();
             App.Current.MainWindow = Window;
