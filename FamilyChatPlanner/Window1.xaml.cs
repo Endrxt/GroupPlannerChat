@@ -45,21 +45,33 @@ namespace FamilyChatPlanner
             //LbMessages.Items.Add($"{MainWindow.ww.username}\n{TbInput.Text}");
             //LbMessages.Items.Add(TbInput.Text);
 
-            Post Post1 = new Post()
+            //Post Post1 = new Post()
+            //{
+            //    Erstelldatum= DateTime.Now/*.Date*/,
+            //    Ablaufdatum = (DateTime)DatumPicker.SelectedDate,
+            //    Kurzbeschreibung = TbInput.Text
+            //};
+            try
             {
-                Erstelldatum= DateTime.Now/*.Date*/,
-                Ablaufdatum = (DateTime)DatumPicker.SelectedDate,
-                Kurzbeschreibung = TbInput.Text
-            };
+                infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum = (DateTime)DatumPicker.SelectedDate;
+            }
+            catch (Exception)
+            {
+                infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum = DateTime.Now;
+            }
+            infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Kurzbeschreibung = TbInput.Text;
 
-            infos.Add(Post1);
+            //infos.Add(Post1);
             LbMessages.SelectedItem = LbMessages.Items[0];           
             txtInfos.Text = $"{infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Erstelldatum} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum.ToString("dd/MM/yyyy")} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Kurzbeschreibung}";
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
+            infos.RemoveAt(LbMessages.Items.IndexOf(LbMessages.SelectedItem));
             LbMessages.Items.Remove(LbMessages.SelectedItem);
+            LbMessages.SelectedItem = LbMessages.Items[0];
+
         }
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
@@ -73,7 +85,7 @@ namespace FamilyChatPlanner
             Post Post1 = new Post()
             {
                 Erstelldatum = DateTime.Now/*.Date*/,
-                Ablaufdatum = (DateTime)DatumPicker.SelectedDate,
+                Ablaufdatum = DateTime.Now,
                 Kurzbeschreibung = TbInput.Text
             };
 
@@ -83,10 +95,7 @@ namespace FamilyChatPlanner
 
         private void LbMessages_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LbMessages.SelectedItem = LbMessages.Items[0];
-
-
-                txtInfos.Text = $"{infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Erstelldatum} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum.ToString("dd/MM/yyyy")} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Kurzbeschreibung}";
+         txtInfos.Text = $"{infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Erstelldatum} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Ablaufdatum.ToString("dd/MM/yyyy")} \n {infos[LbMessages.Items.IndexOf(LbMessages.SelectedItem)].Kurzbeschreibung}";
 
         }
     }
